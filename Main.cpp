@@ -50,10 +50,19 @@ class Long_bow {
         int _armor = 2;
         int _damage = 0;
 };
+class Cap {
+public: 
+    const std::string& GetColor() {
+        return _cap;
+    }
+   const std::string _cap  = "red";
+};
+class Cap; // forward declaration
+        
 class Archer {
 public: 
-    void Look_at_the_Cap(Cap cap_archer ) {
-        return  cap_archer.GetColor();
+    void Look_at_the_Cap(Cap& cap_archer) {
+        std::cout << cap_archer.GetColor();
     }
     void shotArrow(){
         arch_sht.Target_info();
@@ -65,14 +74,6 @@ private:
     Long_bow arch_sht;
 };
 //пример агрегации - когда один класс связан с другим но может существовать самостоятельно
-class Cap {
-public: 
-    void  GetColor() {
-        std::cout << _cap;
-    }
-   const std::string _cap  = "red";
-};
-        
 
 
 int main()
